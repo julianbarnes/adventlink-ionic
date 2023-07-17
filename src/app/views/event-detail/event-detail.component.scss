@@ -1,0 +1,44 @@
+h1, h2, h3, h4, p {
+    color: white;
+}
+
+.title {
+    text-align: center;
+}
+
+mat-icon {
+    color: white;
+}
+
+mat-card {
+    background-color: black;
+}
+
+.action-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+// .card {
+//     width: 20rem;
+//     height: auto;
+//     display: inline-block;
+//   }
+  
+  .verse {
+    width: 80vw;
+    height: 15rem;
+    background-color: white;
+  }
+
+  .verse p {
+    color: black;
+  }
+
+/* .flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+} */

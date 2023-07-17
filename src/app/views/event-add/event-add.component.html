@@ -1,0 +1,42 @@
+<div class="container">
+    <form class="form-group" novalidate (ngSubmit)="save()" [formGroup]="eventForm">
+        <div class="form-group">
+            <!-- Event Name -->
+            <mat-form-field appearance="fill">
+                <input id="titleId" formControlName="title" type="text" matInput placeholder="Event Name" value="">
+            </mat-form-field>
+            <!-- Event Address -->
+            <!-- <mat-form-field appearance="fill">
+                <input id="addressId" formControlName="address" type="text" matInput placeholder="Address" value="">
+            </mat-form-field> -->
+            
+            <mat-form-field appearance="fill">
+                <textarea matInput  id="descriptionId" formControlName="description" type="textarea" placeholder="Description"></textarea>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <input matInput id="urlId" formControlName="url" type="text" placeholder="url"/>
+            </mat-form-field>
+            
+            <mat-form-field appearance="fill">
+                <label for="startDateId">Start Time</label>
+                <input matInput id="startDateId" formControlName="startDate"
+                type="datetime-local" placeholder="Choose a start date">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <label for="endDateId">End Time</label>
+                <input matInput id="endDateId" formControlName="endDate" type="datetime-local" placeholder="Choose a start date">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <input matInput id="locationId" formControlName="location" type="text" placeholder="location"/>
+            </mat-form-field>
+
+            <input formControlName="picture" (input)="fileChosen($event)" type="file"/>
+
+        </div>
+
+        <button id="upload">Upload</button>
+        
+    </form>
+</div>

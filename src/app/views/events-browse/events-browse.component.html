@@ -1,0 +1,57 @@
+<div class="flex-container">
+    <h1 class="mt-3">Adventlink</h1>
+    <button (click)="this.navigateToAdd()" mat-fab matTooltip="Warn" class="col-4" color="warn" aria-label="Example fab with a heart icon">
+        <mat-icon>add</mat-icon>
+    </button>
+
+    <mat-chip-listbox aria-label="Event selection" novalidate [formGroup]="eventForm">
+        <mat-chip-option *ngFor="let group of ['Social', 'Bible Study', 'Professional','Spiritual','Small Group']" [value]="group">
+            {{group}}
+        </mat-chip-option>
+    </mat-chip-listbox>
+    <ng-container *ngIf="!events || events.length === 0">
+        <h1 class="no-events">No Upcoming Events</h1>
+    </ng-container>
+    <ng-container *ngIf="events">
+        <ng-container *ngIf="events.length > 0">
+            <ng-container *ngFor="let event of events">
+                <mat-card  class="card col-12 my-5"
+                (click)="this.navigate(event)">
+                    <mat-card-content>
+                        <ng-container *ngIf="event.picture; else noPicture">
+                            <img class="img-thumbnail" [src]="event.picture" alt="concert image">
+                        </ng-container>
+                        <ng-template #noPicture>
+                            <h1>{{event.title}}</h1>
+                        </ng-template>
+                        <a [href]="event.url">{{event.url}}</a>
+                    </mat-card-content>
+                </mat-card>
+                <ng-container *ngIf="isAdmin">
+                    <button>Approve</button>
+                    <button>Reject</button>
+                </ng-container>
+            </ng-container>
+        </ng-container>
+    </ng-container>
+
+    <!-- <h1>Top Events</h1>
+    <div class="container row">
+        <ng-container *ngFor="let category of categories">
+            <div class="col-sm-6 my-1">
+                <app-category-card [category]="category"></app-category-card>
+            </div>
+        </ng-container>
+    </div>
+    
+    
+    <h1>Event Browse</h1>
+    <div class="container row">
+        <ng-container *ngFor="let category of categories">
+            <div class="col-sm-6 my-1">
+                <app-category-card [category]="category"></app-category-card>
+            </div>
+        </ng-container>
+    </div> -->
+    
+</div>

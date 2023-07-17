@@ -1,0 +1,109 @@
+h1,h2,h3,h4, p {
+  color: #4084C2;
+}
+
+
+.container {
+  background-color: rgb(44, 42, 42);
+  width: 100vw;
+}
+
+.add-button {
+  width: 100%
+}
+
+
+.more-icon {
+  float: right;
+  width: 50px;
+  position: relative;
+}
+
+.menu-button {
+  margin-right: 2rem;
+  float: left;
+  width: 50px;
+}
+.toolbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: rgb(44, 42, 42) !important
+}
+
+.circle {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  background-color: #4084C2;
+
+  .icon {
+    margin: auto;
+    font-size: 2rem;
+    color: black;
+  }
+}
+
+.box {
+  width: 30%;
+  height: 6rem;
+  background-color:#4084C2;
+}
+
+.profile-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 2rem;
+}
+
+.stat-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 2rem;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.events-container {
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.no-events {
+  height: 100vh;
+}
+
+.card {
+  width: 20rem;
+  height: auto;
+  display: inline-block;
+}
+
+.verse {
+  width: 80vw;
+  height: 15rem;
+  background-color: white;
+}
+
+.img-thumbnail {
+  height: 30rem;
+  width: 20rem;
+}
+
+.story {
+  height: 4rem;
+  width: 4rem;
+}

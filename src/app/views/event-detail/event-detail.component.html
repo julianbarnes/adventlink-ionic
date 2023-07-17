@@ -1,0 +1,40 @@
+
+<div class="flex-container">
+    <mat-card *ngIf="this.event" class="rounded mx-auto d-block col-6">
+        <img class="img-fluid" [src]="event.picture" alt="concert image">
+        <mat-card-title><h1 class="title">{{event.title}}</h1></mat-card-title>
+        <mat-card-content>
+            <p>{{event.description}}</p>
+            <a [href]="event.url">{{event.url}}</a>
+            <h1>Date:</h1>
+            <h4>{{dateString}}</h4>
+            <h1>Time:</h1>
+            <h4>{{startTime}} <ng-container *ngIf="event.endDate">- {{endTime}}</ng-container></h4>
+            <h4>Location</h4>
+            <h4>{{event.location}}</h4>
+        </mat-card-content>
+        <!-- <mat-card-actions class="action-container">
+            <button (click)="clickShowGoing()">Show Going</button>
+            <button (click)="clickShowComments()">Show Comments</button>
+            <button (click)="clickRegister()">Register</button>
+        </mat-card-actions> -->
+        <ng-container *ngIf="showGoing">
+            <p *ngFor="let user of goingList">
+                {{user}}
+            </p>
+        </ng-container>
+        
+        <div *ngIf="showComments">
+            <p *ngFor="let comment of commentList">
+                {{comment}}
+            </p>
+        </div>        
+    </mat-card>    
+</div>
+
+
+
+
+<!-- <ng-container *ngIf="page === 'Register'">
+    <mat-icon></mat-icon>
+</ng-container> -->
