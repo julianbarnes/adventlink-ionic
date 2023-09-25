@@ -1,0 +1,4 @@
+<app-selectable-chip
+  *ngFor="let item of items; index as i"
+  (chipSelected)="onChipSelection(i)"
+>{{item}}</app-selectable-chip>
