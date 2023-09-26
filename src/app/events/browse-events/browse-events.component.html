@@ -1,6 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Header Toolbar</ion-title>
+  </ion-toolbar>
+</ion-header>
 <ion-content>
   <app-selectable-chip-list
     [items]="categories"
     (selectedItemsChanged)="onSelectedItemsChanged()"
   ></app-selectable-chip-list>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Card Title</ion-card-title>
+      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Here's a small text description for the card content. Nothing more, nothing less.
+    </ion-card-content>
+  </ion-card>
+  <ion-card *ngIf="allEvents && allEvents.length > 0">
+    <ion-card-header>
+      <ion-card-title>Card Title</ion-card-title>
+      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+    </ion-card-header>
+      <ion-card-content>
+          <ng-container *ngIf="allEvents[0].picture; else noPicture">
+            <img class="img-thumbnail" [src]="allEvents[0].picture" alt="concert image">
+        </ng-container>
+        <ng-template #noPicture>
+            <h1>{{allEvents[0].title}}</h1>
+        </ng-template>
+        <a [href]="allEvents[0].url">{{allEvents[0].url}}</a>
+      </ion-card-content>
+  </ion-card>
 </ion-content>
