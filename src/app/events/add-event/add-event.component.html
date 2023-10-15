@@ -1,3 +1,56 @@
-<p>
-  add-event works!
-</p>
+<ion-content>
+  <h3>Add Event</h3>
+  <form action="">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="8">
+          <ion-item>
+            <ion-input placeholder="Name"></ion-input>
+          </ion-item>
+        </ion-col>
+
+        <ion-col>
+          <div>
+            <ion-label>Date</ion-label>
+            <ion-datetime-button datetime="datetime"></ion-datetime-button>
+          </div>
+        </ion-col>
+      </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-textarea placeholder="Event Description" rows="6"></ion-textarea>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-input type="text" placeholder="Location"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-align-items-end">
+      <ion-col>
+        <ion-item>
+          <ion-input type="url" placeholder="URL"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-label class="file-input-label" position="stacked">Image</ion-label>
+          <ion-input class="file-input" type="file"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  </form>
+  <ion-modal [keepContentsMounted]="true">
+    <ng-template>
+      <ion-datetime id="datetime" [showDefaultTitle]="true"></ion-datetime>
+    </ng-template>
+  </ion-modal>
+</ion-content>
