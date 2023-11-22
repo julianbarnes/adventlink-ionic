@@ -1,21 +1,59 @@
-h3 {
+:host {
+  height: 100%;
+}
+
+.add-event-header {
+  color: var(--ion-color-primary-shade-2);
   text-align: center;
 }
 
-form {
-  max-width: 90vw;
-  margin: 0 auto;
+.submit-button {
+  --background: var(--ion-color-primary-shade);
+  --color: #fff;
 }
 
-.file-input-label {
-  font-size: larger;
+.upload-file-button {
+  --background: var(--ion-color-secondary-shade);
+  --color: #fff;
+}
+
+.content-wrapper {
+  display: grid;
+  align-content: space-between;
+}
+
+#description-row {
+  margin-top: 10px;
+}
+
+.spaced + * {
+  margin-top: 5px;
+}
+
+.file-wrapper {
+  align-items: center;
+  display: flex;
+  gap: 1em;
+}
+
+.file-input-wrapper {
+  position: relative;
+  width: min-content;
 }
 
 .file-input {
-  margin-top: 5px;
+  display: none;
+}
+
+.date-label {
+  margin-bottom: 10px;
 }
 
 ion-datetime-button {
   justify-content: start;
   margin-top: 5px;
+}
+
+ion-input {
+  --highlight-color-valid: var(--ion-color-primary);
 }
