@@ -1,3 +1,61 @@
-<p>
-  add-event works!
-</p>
+<ion-content>
+  <div class="content-wrapper">
+    <h3 class="add-event-header">New Event</h3>
+    <form action="" method="post">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-input color="primary" fill="solid" name="name" [(ngModel)]="name" label="Name" labelPlacement="floating" class="spaced"></ion-input>
+          </ion-col>
+        </ion-row>
+          <ion-row>
+            <ion-col size="auto">
+                  <ion-label class="date-label">Date</ion-label>
+                  <ion-datetime-button datetime="datetime"></ion-datetime-button>
+            </ion-col>
+          </ion-row>
+      <ion-row id="description-row" class="spaced">
+        <ion-col>
+          <ion-textarea fill="solid" label="Event Description" labelPlacement="floating" rows="4"></ion-textarea>
+        </ion-col>
+      </ion-row>
+      <ion-row class="spaced">
+        <ion-col>
+          <ion-input fill="solid" type="text" label="Location" labelPlacement="floating"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-align-items-end">
+        <ion-col>
+          <ion-input fill="solid" label="URL" labelPlacement="floating" type="url"></ion-input>
+        </ion-col>
+      </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-label class="spaced">Image</ion-label>
+              <div class="file-wrapper">
+                <div class="file-input-wrapper">
+                  <ion-button size="small" class="upload-file-button" (click)="clickFileInput()">
+                    <ion-icon slot="start" name="cloud-upload-outline"></ion-icon>
+                    Upload file
+                  </ion-button>
+                  <ion-input #fileInput class="file-input" (ionChange)="onFileSelected()" type="file" accept="image/*"></ion-input>
+                </div>
+                <span>{{(selectedImage | async)?.name}}</span>
+              </div>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+        <ion-col></ion-col>
+        <ion-col size="auto">
+          <ion-button class="submit-button" (click)="submit()">Create Event</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    </form>
+  </div>
+  <ion-modal [keepContentsMounted]="true">
+    <ng-template>
+      <ion-datetime #datepicker id="datetime" (ionChange)="onDateChange()"></ion-datetime>
+    </ng-template>
+  </ion-modal>
+</ion-content>

@@ -3,4 +3,11 @@
     [items]="categories"
     (selectedItemsChanged)="onSelectedItemsChanged()"
   ></app-selectable-chip-list>
+
+  <ion-button id="open-custom-dialog">Add event</ion-button>
+  <ion-modal #modal id="add-event-dialog" trigger="open-custom-dialog">
+    <ng-template>
+      <app-add-event></app-add-event>
+    </ng-template>
+  </ion-modal>
 </ion-content>

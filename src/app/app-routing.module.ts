@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+
 import { BrowseEventsComponent } from './events/browse-events/browse-events.component';
-import { AddEventComponent } from './events/add-event/add-event.component';
 import { EventDetailsComponent } from './events/event-details/event-details.component';
 
 const routes: Routes = [
@@ -13,10 +13,6 @@ const routes: Routes = [
   {
     path: 'events',
     component: BrowseEventsComponent
-  },
-  {
-    path: 'events/add',
-    component: AddEventComponent
   },
   {
     path: 'events/:id',
